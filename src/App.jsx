@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import WhileCalling from "./components/WhileCalling";
 import Footer from "./components/Footer";
+import callStart from "./assets/AR Assets/call_start.png";
+import callEnd from "./assets/AR Assets/call_end.png";
 
 function App() {
   const [whileCalling, setWhileCalling] = useState(false);
@@ -12,6 +14,13 @@ function App() {
     <$Wrapper>
       <Header />
       {whileCalling ? <WhileCalling /> : <Main />}
+      <$CallBox
+        onClick={() => {
+          setWhileCalling((prev) => !prev);
+        }}
+      >
+        <img src={whileCalling ? callEnd : callStart} alt="calling" />
+      </$CallBox>
       <Footer />
     </$Wrapper>
   );
@@ -28,4 +37,13 @@ const $Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+
+const $CallBox = styled.div`
+  transform: ${({ whileCalling }) =>
+    whileCalling ? "translateY(5vw)" : "translateY(-2.5vw)"};
+  width: 30vw;
+  img {
+    width: 100%;
+  }
 `;

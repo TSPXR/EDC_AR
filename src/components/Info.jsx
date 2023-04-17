@@ -22,7 +22,6 @@ const Info = () => {
           <img src={boxStatCol} alt="status" />
         </$ColList>
       </$InfoCol>
-      <$InfoCol></$InfoCol>
     </$InfoWrapper>
   );
 };
@@ -30,7 +29,6 @@ const Info = () => {
 export default Info;
 
 const $InfoWrapper = styled.div`
-  border: 1px solid blue;
   width: 14vw;
   display: flex;
   flex-direction: column;

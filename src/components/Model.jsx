@@ -71,7 +71,6 @@ const Model = () => {
 export default Model;
 
 const $ModelWrapper = styled.div`
-  border: 1px solid red;
   width: 14vw;
   position: relative;
   display: flex;
@@ -83,7 +82,7 @@ const $ModelBox = styled.div`
   flex-grow: 1;
   img {
     width: 100%;
-    height: 100%;
+    height: 99%;
   }
 `;
 const $Model = styled.div`
