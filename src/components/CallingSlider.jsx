@@ -7,7 +7,7 @@ import boxChkSlc from "./../assets/AR Assets/box_chk_slc.png";
 import styled from "styled-components";
 import { useState, useCallback } from "react";
 
-const ModelSlider = () => {
+const CallingSlider = () => {
   const [data, setData] = useState([
     { id: 1, title: "유량계", content: "계측 정상유무", checked: false },
     { id: 2, title: "유량계", content: "변환기반 동작유무  ", checked: false },
@@ -36,15 +36,11 @@ const ModelSlider = () => {
     className: "center",
     centerMode: true,
     infinite: true,
-    // centerPadding: "60px",
     dots: false,
     infinite: true,
     slidesToShow: 3,
     // slidesToScroll: 1,
-    vertical: true,
-    verticalSwiping: true,
     swipeToSlide: true,
-    // focusOnSelect: true,
   };
 
   return (
@@ -66,23 +62,21 @@ const ModelSlider = () => {
   );
 };
 
-export default ModelSlider;
+export default CallingSlider;
 
 const $Wrapper = styled.div`
   /* background-color: yellow; */
-  width: 100%;
-  height: 85%;
-  position: absolute;
-  top: 3.9vw;
-  left: 0;
-  overflow: hidden;
+  width: 35vw;
+  height: 10vw;
+  /* overflow: hidden; */
 `;
 
 const $List = styled.div`
-  /* border: 0.5px solid red; */
-  width: 12.5vw;
-  margin: auto;
   position: relative;
+  width: 11vw;
+  img {
+    width: 100%;
+  }
 `;
 
 const $Title = styled.div`
@@ -90,7 +84,7 @@ const $Title = styled.div`
   left: 1.2vw;
   top: 0.8vw;
   width: 10vw;
-  height: 1.9vw;
+  height: 1.6vw;
   display: flex;
   justify-content: center;
   align-items: center;

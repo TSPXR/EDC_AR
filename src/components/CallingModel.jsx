@@ -55,6 +55,7 @@ const CallingModel = () => {
         </$Indicator>
         <$ModelBox>
           <img src={box3d} alt="3d_model" />
+          <$Text>3D 모델</$Text>
           <$Model>
             {selected !== "maint_slc" && <img src={model} alt="3d_model" />}
           </$Model>
@@ -66,18 +67,22 @@ const CallingModel = () => {
         <$InfoRow>
           <$RowList>
             <img src={boxStat} alt="status" />
+            <div>활성탄 차압</div>
           </$RowList>
           <$RowList>
             <img src={boxStat} alt="status" />
+            <div>여재유출방지 차압</div>
           </$RowList>
         </$InfoRow>
       </$InfoWrapper>
       <$InfoCol>
         <$ColList>
           <img src={boxStatCol} alt="status" />
+          <div>유출유량</div>
         </$ColList>
         <$ColList>
           <img src={boxStatCol} alt="status" />
+          <div>유출TOC</div>
         </$ColList>
       </$InfoCol>
     </$Wrapper>
@@ -90,7 +95,7 @@ const $Wrapper = styled.div`
   z-index: 1;
   display: flex;
   flex-direction: column;
-  padding-top: 3vw;
+  padding: 3vw 0;
 `;
 
 const $ModelWrapper = styled.div`
@@ -106,6 +111,21 @@ const $ModelBox = styled.div`
     width: 100%;
   }
 `;
+
+const $Text = styled.div`
+  /* border: 0.5px solid green; */
+  position: absolute;
+  top: 0.8vw;
+  left: 1vw;
+  width: 12vw;
+  height: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5vw;
+`;
+
 const $Model = styled.div`
   position: absolute;
   top: 5vw;
@@ -146,9 +166,25 @@ const $InfoRow = styled.ul`
 `;
 
 const $RowList = styled.li`
+  position: relative;
   /* border: 1px solid green; */
   img {
     width: 100%;
+  }
+  div {
+    position: absolute;
+    top: 0.5vw;
+    left: 0.5vw;
+    width: 6vw;
+    height: 3.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9vw;
+    text-align: center;
+    line-height: 1.2;
+    word-break: keep-all;
   }
 `;
 
@@ -162,10 +198,24 @@ const $InfoCol = styled.ul`
 `;
 
 const $ColList = styled.li`
+  position: relative;
   :nth-child(2) {
     transform: translateY(-0.5vw);
   }
   img {
     width: 100%;
+  }
+  div {
+    /* border: 0.5px solid red; */
+    position: absolute;
+    top: 0.5vw;
+    left: 0.5vw;
+    width: 13vw;
+    height: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1vw;
   }
 `;

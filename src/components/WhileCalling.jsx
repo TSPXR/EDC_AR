@@ -3,16 +3,21 @@ import CallingModel from "./CallingModel";
 import styled from "styled-components";
 import boxTitle from "./../assets/AR Assets/box_title.png";
 import map from "./../assets/AR Assets/map.png";
+import CallingSlider from "./CallingSlider";
 
 const WhileCalling = () => {
   return (
     <$Wrapper>
       <CallingModel />
-      <$Title>
-        <img src={boxTitle} alt="box_title" />
-      </$Title>
+      <$TitleSliderWrapper>
+        <$Title>
+          <img src={boxTitle} alt="box_title" />
+          <div>활성탄</div>
+        </$Title>
+        <CallingSlider />
+      </$TitleSliderWrapper>
       <$ManualWrapper>
-        <$Manual>메뉴얼 이미지</$Manual>
+        <$Manual></$Manual>
         <$HMI>
           <img src={map} alt="'hmi" />
         </$HMI>
@@ -30,16 +35,41 @@ const $Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+const $TitleSliderWrapper = styled.div`
+  padding-bottom: 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 const $Title = styled.div`
+  position: relative;
   padding-top: 1vw;
   width: 30vw;
   img {
     width: 100%;
   }
+  div {
+    /* border: 0.5px solid green; */
+    position: absolute;
+    top: 1.3vw;
+    left: 3vw;
+    width: 26.5vw;
+    height: 4.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5vw;
+  }
 `;
 
 const $ManualWrapper = styled.div`
-  padding: 3vw 0;
+  padding-top: 4vw;
+  padding-bottom: 1vw;
+  /* padding-top: 3vw; */
   display: flex;
   flex-direction: column;
   gap: 1vw;
@@ -47,7 +77,7 @@ const $ManualWrapper = styled.div`
 
 const $Manual = styled.div`
   width: 15vw;
-  height: 47vw;
+  flex-grow: 1;
   border: 1px solid gray;
   border-radius: 1vw;
   background-color: white;
@@ -55,6 +85,7 @@ const $Manual = styled.div`
 
 const $HMI = styled.div`
   width: 15vw;
+  /* flex-grow: 1; */
   /* height: 15vw;
   border: 1px solid gray;
   border-radius: 1vw;

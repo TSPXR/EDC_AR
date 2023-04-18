@@ -13,8 +13,13 @@ function App() {
   return (
     <$Wrapper>
       <Header />
-      {whileCalling ? <WhileCalling /> : <Main />}
+      {whileCalling ? (
+        <WhileCalling whileCalling={whileCalling} />
+      ) : (
+        <Main whileCalling={whileCalling} />
+      )}
       <$CallBox
+        whileCalling={whileCalling}
         onClick={() => {
           setWhileCalling((prev) => !prev);
         }}
@@ -32,7 +37,7 @@ const $Wrapper = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
-  overflow-y: hidden;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,7 +46,7 @@ const $Wrapper = styled.div`
 
 const $CallBox = styled.div`
   transform: ${({ whileCalling }) =>
-    whileCalling ? "translateY(5vw)" : "translateY(-2.5vw)"};
+    whileCalling ? "translateY(-6vw)" : "translateY(-2.5vw)"};
   width: 30vw;
   img {
     width: 100%;
