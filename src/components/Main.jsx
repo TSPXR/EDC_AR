@@ -2,29 +2,21 @@ import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
 import boxTitle from "./../assets/AR Assets/box_title.png";
-import callStart from "./../assets/AR Assets/call_start.png";
-import callEnd from "./../assets/AR Assets/call_end.png";
 import Model from "./Model";
 import Info from "./Info";
 
-const Main = () => {
+const Main = ({ whileCalling }) => {
   const [end, setEnd] = useState(false);
   return (
     <$Wrapper>
       <$Title>
         <img src={boxTitle} alt="box_title" />
+        <div>활성탄</div>
       </$Title>
       <$ModelWrapper>
         <Model />
         <Info />
       </$ModelWrapper>
-      <$CallBox
-        onClick={() => {
-          setEnd((prev) => !prev);
-        }}
-      >
-        <img src={end ? callEnd : callStart} alt="call_start" />
-      </$CallBox>
     </$Wrapper>
   );
 };
@@ -34,29 +26,34 @@ export default Main;
 const $Wrapper = styled.div`
   width: 50vw;
   height: 40vw;
-  border: 1px solid green;
   box-sizing: content-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1vw;
 `;
 
 const $Title = styled.div`
+  position: relative;
   width: 30vw;
   img {
     width: 100%;
+  }
+  div {
+    /* border: 0.5px solid green; */
+    position: absolute;
+    top: 0.5vw;
+    left: 3vw;
+    width: 26.5vw;
+    height: 4.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5vw;
   }
 `;
 
 const $ModelWrapper = styled.div`
   display: flex;
-`;
-
-const $CallBox = styled.div`
-  width: 30vw;
-  img {
-    width: 100%;
-  }
 `;

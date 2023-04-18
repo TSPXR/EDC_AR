@@ -58,6 +58,7 @@ const Model = () => {
       </$Indicator>
       <$ModelBox>
         <img src={box3d} alt="3d_model" />
+        <$Text>3D 모델</$Text>
         <$Model>
           {selected !== "maint_slc" && <img src={model} alt="3d_model" />}
         </$Model>
@@ -71,7 +72,6 @@ const Model = () => {
 export default Model;
 
 const $ModelWrapper = styled.div`
-  border: 1px solid red;
   width: 14vw;
   position: relative;
   display: flex;
@@ -83,9 +83,24 @@ const $ModelBox = styled.div`
   flex-grow: 1;
   img {
     width: 100%;
-    height: 100%;
+    height: 99%;
   }
 `;
+
+const $Text = styled.div`
+  /* border: 0.5px solid green; */
+  position: absolute;
+  top: 0.8vw;
+  left: 1vw;
+  width: 12vw;
+  height: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5vw;
+`;
+
 const $Model = styled.div`
   position: absolute;
   top: 4.5vw;
