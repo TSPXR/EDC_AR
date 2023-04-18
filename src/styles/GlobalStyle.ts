@@ -38,7 +38,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   html {
-    font-family: 'NanumSquare';
   }
   body {
     width: 100%;
@@ -46,6 +45,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     overscroll-behavior: contain;
+    font-family: 'NanumSquare';
   }
 `;
 

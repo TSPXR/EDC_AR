@@ -67,22 +67,28 @@ const CallingModel = () => {
         <$InfoRow>
           <$RowList>
             <img src={boxStat} alt="status" />
-            <div>활성탄 차압</div>
+            <$RowTitle>활성탄 차압</$RowTitle>
+            <$RowContent>123</$RowContent>
           </$RowList>
           <$RowList>
             <img src={boxStat} alt="status" />
-            <div>여재유출방지 차압</div>
+            <$RowTitle>여재유출방지 차압</$RowTitle>
+            <$RowContent>123</$RowContent>
           </$RowList>
         </$InfoRow>
       </$InfoWrapper>
       <$InfoCol>
         <$ColList>
           <img src={boxStatCol} alt="status" />
-          <div>유출유량</div>
+          <$ColTitle>유출유량</$ColTitle>
+          <$ColContent1>123</$ColContent1>
+          <$ColContent2>123</$ColContent2>
         </$ColList>
         <$ColList>
           <img src={boxStatCol} alt="status" />
-          <div>유출TOC</div>
+          <$ColTitle>유출TOC</$ColTitle>
+          <$ColContent1>123</$ColContent1>
+          <$ColContent2>123</$ColContent2>
         </$ColList>
       </$InfoCol>
     </$Wrapper>
@@ -92,6 +98,7 @@ const CallingModel = () => {
 export default CallingModel;
 
 const $Wrapper = styled.div`
+  height: 50vw;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -171,21 +178,34 @@ const $RowList = styled.li`
   img {
     width: 100%;
   }
-  div {
-    position: absolute;
-    top: 0.5vw;
-    left: 0.5vw;
-    width: 6vw;
-    height: 3.5vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 0.9vw;
-    text-align: center;
-    line-height: 1.2;
-    word-break: keep-all;
-  }
+`;
+
+const $RowTitle = styled.div`
+  position: absolute;
+  top: 0.5vw;
+  left: 0.5vw;
+  width: 6vw;
+  height: 3.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9vw;
+  text-align: center;
+  line-height: 1.2;
+  word-break: keep-all;
+`;
+
+const $RowContent = styled.div`
+  /* border: 0.5px solid green; */
+  position: absolute;
+  top: 7.3vw;
+  left: 0.5vw;
+  width: 3.5vw;
+  height: 1.5vw;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
 `;
 
 const $InfoCol = styled.ul`
@@ -205,17 +225,43 @@ const $ColList = styled.li`
   img {
     width: 100%;
   }
-  div {
-    /* border: 0.5px solid red; */
-    position: absolute;
-    top: 0.5vw;
-    left: 0.5vw;
-    width: 13vw;
-    height: 2vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 1vw;
-  }
+`;
+
+const $ColTitle = styled.div`
+  /* border: 0.5px solid red; */
+  position: absolute;
+  top: 0.5vw;
+  left: 0.5vw;
+  width: 13vw;
+  height: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1vw;
+`;
+
+const $ColContent1 = styled.div`
+  /* background-color: pink; */
+  /* border: 0.5px solid green; */
+  position: absolute;
+  top: 3.5vw;
+  left: 5vw;
+  width: 5.5vw;
+  height: 1.5vw;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+`;
+
+const $ColContent2 = styled.div`
+  /* border: 0.5px solid green; */
+  position: absolute;
+  top: 5.3vw;
+  left: 5vw;
+  width: 5.5vw;
+  height: 1.5vw;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
 `;

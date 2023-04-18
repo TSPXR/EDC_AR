@@ -12,7 +12,7 @@ function App() {
   const [whileCalling, setWhileCalling] = useState(false);
   return (
     <$Wrapper>
-      <Header />
+      <Header whileCalling={whileCalling} />
       {whileCalling ? (
         <WhileCalling whileCalling={whileCalling} />
       ) : (

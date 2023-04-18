@@ -23,6 +23,6 @@ const $Footer = styled.div`
   img {
     position: absolute;
     bottom: 0;
-    width: 20vw;
+    width: 16vw;
   }
 `;
