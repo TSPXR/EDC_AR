@@ -67,7 +67,8 @@ const $Title = styled.div`
 `;
 
 const $ManualWrapper = styled.div`
-  padding-top: 4vw;
+  height: 50vw;
+  padding-top: 3.5vw;
   padding-bottom: 1vw;
   /* padding-top: 3vw; */
   display: flex;
